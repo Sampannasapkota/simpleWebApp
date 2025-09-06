@@ -1,13 +1,19 @@
 package com.springBoot.simpleWebApp.model;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import org.springframework.stereotype.Component;
 
-
+@Component
+@Entity
 public class Product {
-
+@Id
     private int id;
     private String name;
     private int price;
+
+    public Product(){}
 
     public Product(int id, String name, int price) {
         this.id = id;
@@ -37,5 +43,14 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
